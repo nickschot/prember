@@ -41,5 +41,6 @@ function loadPremberPlugins(context) {
   return addons
     .filter((addon) => addon.pkg.keywords.includes('prember-plugin'))
     .filter((addon) => typeof addon.urlsForPrember === 'function')
+    .filter((addon) => addon.name !== 'empress-blog')
     .map((addon) => addon.urlsForPrember.bind(addon));
 }
